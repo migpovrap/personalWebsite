@@ -89,3 +89,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   appendToHistory(commands.welcome);
 });
+
+async function fetchProjects() {
+  try {
+    const response = await fetch('https://api.github.com/users/migpovrap/repos');
+    const projects = await response.json();
+    
+    const processedProjects = projects.map(project => ({
+      name: project.name,
+      description: project.description || 'No description available',
+      language: project.language || 'Not specified',
+      stars: project.stargazers_count,
+      url: project.html_url
+    }));
+    
+    updateFileSystem(processedProjects);
+  } catch (error) {
+    console.error('Error fetching projects:', error);
+  }
+}
+document.addEventListener('DOMContentLoaded', fetchProjects);

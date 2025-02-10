@@ -1,14 +1,100 @@
+const fileSystem = {
+  root: {
+    projects: {
+      type: 'directory'
+    }
+  },
+  currentPath: ['root']
+};
+
+function updateFileSystem(projects) {
+  fileSystem.root.projects = {};
+  projects.forEach(project => {
+    fileSystem.root.projects[project.name] = {
+      type: 'file',
+      content: [
+        `Name: ${project.name}`,
+        `Description: ${project.description}`,
+        `Language: ${project.language}`,
+        `Stars: ${project.stars}`,
+        `URL: <a href="${project.url}" target="_blank" class="text-blue-500 hover:underline">${project.url}</a>`
+      ]
+    }
+  });
+}
+
+function getCurrentDirectory() {
+  let current = fileSystem;
+  fileSystem.currentPath.forEach(dir => {
+    current = current[dir];
+  });
+  return current;
+}
+
+function cd(dir) {
+  if (!dir || dir === '') {
+    return ['Usage: cd <directory>'];
+  }
+
+  if (dir === '..') {
+    if (fileSystem.currentPath.length > 1) {
+      fileSystem.currentPath.pop();
+      return [`Changed to ${fileSystem.currentPath.join('/')}`];
+    }
+    return [''];
+  }
+
+  const current = getCurrentDirectory();
+  if (current[dir]) { 
+    if (typeof current[dir] === 'object' && !current[dir].type) {
+      fileSystem.currentPath.push(dir);
+      return [`Changed to ${fileSystem.currentPath.join('/')}`];
+    }
+    return ['Not a directory!'];
+  }
+  return [`not found: ${dir}`];
+}
+
+function ls() {
+  const current = getCurrentDirectory();
+  const contents = Object.keys(current).map(name => {
+    if (current[name].type === 'file') {
+      return `📄 ${name}`;
+    }
+    return `📁 ${name}`;
+  })
+  return contents.length ? contents : ['Empty directory'];
+}
+
+function cat(file) {
+  if (!file || file === '') {
+    return ['Usage: cat <file>'];
+  }
+
+  const current = getCurrentDirectory();
+  const actualFileName = Object.keys(current).find(
+    name => name.toLowerCase() === file.toLowerCase()
+  );
+
+  if (actualFileName && current[actualFileName].type === 'file') {
+    return current[actualFileName].content;
+  }
+  return [`not found: ${file}`];
+}
+
 const commands = {
   help : [
     'Available commands:',
     'help      - Show the help mensage',
+    'welcome   - Show the welcome message',
     'whois     - About me',
     'projects  - My projects mostly on github',
     'cv        - Download and view my cv',
     'clear     - Unix clear command',
     'gui       - A simpler version',
     'cd        - Unix cd command',
-    'ls        - Unix ls command'
+    'ls        - Unix ls command',
+    'cat       - Unix cat command'
   ],
 
   whois: [
@@ -20,7 +106,7 @@ const commands = {
   ],
 
   projects: [
-    'These are some of the projects that I have developed:',
+    'These are some of the projects that I have developed you can view them using the cd and ls commands.',
     'So far most of them have been done for my classes at IST.'
   ],
 
@@ -52,8 +138,14 @@ const commands = {
 };
 
 function command(cmd) {
-  cmd = cmd.toLowerCase().trim();
-  switch (cmd) {
+  const [command, ...args] = cmd.toLowerCase().trim().split(' ');
+  switch (command) {
+    case 'ls':
+      return ls();
+    case 'cd':
+      return cd(args[0]);
+    case 'cat':
+      return cat(args[0]);
     case 'clear':
       return 'clear';
     case 'help':
@@ -68,6 +160,8 @@ function command(cmd) {
       return commands.cv;
     case 'gui':
       window.location.href = 'main.html';
+    case 'welcome':
+      return commands.welcome;
     default:
       return commandNotFound(cmd);
   }
