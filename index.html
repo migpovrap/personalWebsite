@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terminal: {
+                            bg: '#222223',
+                            text: '#a9b1d6',
+                            prompt: '#82AAFF'
+                        }
+                    },
+                    fontFamily: {
+                        mono: ['MesloLGL Nerd Font Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="command.js"></script>
+    <script src="main.js"></script>
+</head>
+<body class="bg-terminal-bg font-mono text-terminal-text p-8">
+    <div class="fixed top-4 right-4 flex gap-4">
+        <a href="main.html" class="text-terminal-text hover:text-terminal-prompt transition-colors">
+            <i class="fa-solid fa-globe text-2xl"></i>
+        </a>
+        <a href="https://github.com/migpovrap" target="_blank" class="text-terminal-text hover:text-terminal-prompt transition-colors">
+            <i class="fab fa-github text-2xl"></i>
+        </a>
+        <a href="https://linkedin.com/in/miguelpraposo" target="_blank" class="text-terminal-text hover:text-terminal-prompt transition-colors">
+            <i class="fab fa-linkedin text-2xl"></i>
+        </a>
+        <a href="mailto:miguel.p.raposo@tecnico.ulisboa.pt" class="text-terminal-text hover:text-terminal-prompt transition-colors">
+            <i class="fas fa-envelope text-2xl"></i>
+        </a>
+    </div>
+    <div class="flex flex-col min-h-screen">
+      <div class="mb-8">
+          <pre>
+            __       __  __                                __        _______                                                    
+            |  \     /  \|  \                              |  \      |       \                                                   
+            | $$\   /  $$ \$$  ______   __    __   ______  | $$      | $$$$$$$\  ______    ______    ______    _______   ______  
+            | $$$\ /  $$$|  \ /      \ |  \  |  \ /      \ | $$      | $$__| $$ |      \  /      \  /      \  /       \ /      \ 
+            | $$$$\  $$$$| $$|  $$$$$$\| $$  | $$|  $$$$$$\| $$      | $$    $$  \$$$$$$\|  $$$$$$\|  $$$$$$\|  $$$$$$$|  $$$$$$\
+            | $$\$$ $$ $$| $$| $$  | $$| $$  | $$| $$    $$| $$      | $$$$$$$\ /      $$| $$  | $$| $$  | $$ \$$    \ | $$  | $$
+            | $$ \$$$| $$| $$| $$__| $$| $$__/ $$| $$$$$$$$| $$      | $$  | $$|  $$$$$$$| $$__/ $$| $$__/ $$ _\$$$$$$\| $$__/ $$
+            | $$  \$ | $$| $$ \$$    $$ \$$    $$ \$$     \| $$      | $$  | $$ \$$    $$| $$    $$ \$$    $$|       $$ \$$    $$
+              \$$      \$$ \$$ _\$$$$$$$  \$$$$$$   \$$$$$$$ \$$       \$$   \$$  \$$$$$$$| $$$$$$$   \$$$$$$  \$$$$$$$   \$$$$$$ 
+                              |  \__| $$                                                  | $$                                    
+                              \$$    $$                                                  | $$                                    
+                                \$$$$$$                                                    \$$                                    
+          </pre>
+      </div>
+      <div class="w-full md:w-1/2 space-y-4">
+          <div class="terminal">
+              <div class="terminal-container flex items-start">
+                  <span class="prompt"></span>
+              </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

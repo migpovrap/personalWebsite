@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miguel Raposo | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+      html {
+          scroll-behavior: smooth;
+      }
+  </style>
+  <script src="projects.js"></script>
+</head>
+<body class="bg-zinc-50">
+    <!-- Hero Section -->
+    <div id="hero" class="relative overflow-hidden">
+        <!-- Navigation -->
+        <nav class="top-0 left-0 z-0 flex items-center justify-center w-full h-full py-5 -ml-0 space-x-5 text-base md:-ml-5 md:py-0 md:absolute tails-selected-element">
+          <a href="#hero" class="relative font-medium leading-6 text-zinc-600 transition duration-150 ease-out hover:text-zinc-900" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+              <span class="block">Home</span>
+              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
+                  <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900" x-transition:enter="transition ease duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out duration-300" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0"></span>
+              </span>
+          </a>
+          <a href="#projects" class="relative font-medium leading-6 text-zinc-600 transition duration-150 ease-out hover:text-zinc-900" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+              <span class="block">Projects</span>
+              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
+                  <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900" x-transition:enter="transition ease duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out duration-300" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0"></span>
+              </span>
+          </a>
+          <a href="#education" class="relative font-medium leading-6 text-zinc-600 transition duration-150 ease-out hover:text-zinc-900" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+              <span class="block">Education</span>
+              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
+                  <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900" x-transition:enter="transition ease duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out duration-300" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0"></span>
+              </span>
+          </a>
+          <a href="/cv.pdf" class="relative font-medium leading-6 text-zinc-600 transition duration-150 ease-out hover:text-zinc-900" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+              <span class="block">CV</span>
+              <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden">
+                  <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900" x-transition:enter="transition ease duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out duration-300" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0"></span>
+              </span>
+          </a>
+        </nav>
+
+        <!-- Hero Content -->
+        <div class="relative px-4 pt-16 mx-auto lg:py-32 md:px-8 xl:px-20 sm:max-w-xl md:max-w-full">
+            <div class="max-w-xl mx-auto lg:max-w-screen-xl">
+                <div class="mb-16 lg:max-w-lg lg:mb-0">
+                    <div class="max-w-xl mb-6">
+                        <h1 class="max-w-lg mb-6 font-sans text-4xl font-bold tracking-tight text-zinc-900 sm:text-6xl sm:leading-none">
+                            Hi, I'm Miguel Raposo
+                        </h1>
+                        <p class="text-base text-zinc-700 md:text-lg">
+                            A Computer Science and Engineering Student @ IST, Lisbon
+                            I'm also a rower and fascinated with tech in general, trying to justify having a HomeLab.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+      <div class="container px-4 mx-auto">
+          <h2 class="mb-12 text-3xl font-bold text-center text-zinc-900">Projects</h2>
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Projects will be loaded here -->
+          </div>
+      </div>
+  </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-zinc-50">
+      <div class="container px-4 mx-auto">
+          <h2 class="mb-12 text-3xl font-bold text-center text-zinc-900">Education</h2>
+          <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              <!-- Education Card Template -->
+              <div class="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+                  <div class="p-6 bg-white">
+                      <div class="flex items-center justify-between mb-4">
+                          <h3 class="text-xl font-bold text-zinc-900">Science and Technology High School Course</h3>
+                          <span class="text-sm text-zinc-500">2020 - 2023</span>
+                      </div>
+                      <h4 class="text-lg font-medium text-zinc-700 mb-2">Escola Secundária Homem Cristo</h4>
+                      <p class="text-zinc-600 mb-4">
+                          In the national final Math exam I obtained a grade of 18/20.
+                          Final grade: 176/200
+                      </p>
+                      <div class="flex flex-wrap gap-2">
+                          <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Mathematics</span>
+                          <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Physics</span>
+                          <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Portuguese</span>
+                          <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">English</span>
+                      </div>
+                  </div>
+              </div>
+              <div class="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+                <div class="p-6 bg-white">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-bold text-zinc-900">Certificate in Advanced English</h3>
+                        <span class="text-sm text-zinc-500">July of 2023</span>
+                    </div>
+                    <h4 class="text-lg font-medium text-zinc-700 mb-2">Royal School, Aveiro</h4>
+                    <h4 class="text-lg font-medium text-zinc-700 mb-2">Cambridge English Assesement</h4>
+                    <p class="text-zinc-600 mb-4">
+                        FCEFR Level: C1
+                    </p>
+                    <p class="text-zinc-600 mb-4">
+                      Overall Score: 196/210
+                    </p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+              <div class="p-6 bg-white">
+                  <div class="flex items-center justify-between mb-4">
+                      <h3 class="text-xl font-bold text-zinc-900">B.Sc. in Computer Science and Engineering</h3>
+                      <span class="text-sm text-zinc-500">2023 - Present</span>
+                  </div>
+                  <h4 class="text-lg font-medium text-zinc-700 mb-2">Instituto Superior Técnico</h4>
+                  <p class="text-zinc-600 mb-4">
+                      Final grade: --/20
+                  </p>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Object Oriented Programing</span>
+                      <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Operating Systems</span>
+                        <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Algorithms and Data Structures</span>
+                      <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">Maths and Physics</span>
+                  </div>
+              </div>
+          </div>
+          </div>
+      </div>
+  </section>
+
+    <!-- Footer -->
+    <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+        <div class="flex justify-center mt-8 space-x-6">
+            <a href="https://github.com/migpovrap" class="text-zinc-400 hover:text-zinc-500">
+                <span class="sr-only">GitHub</span>
+                <i class="fab fa-github w-6 h-6"></i>
+            </a>
+            <a href="https://linkedin.com/in/miguelpraposo" class="text-zinc-400 hover:text-zinc-500">
+                <span class="sr-only">LinkedIn</span>
+                <i class="fab fa-linkedin w-6 h-6"></i>
+            </a>
+        </div>
+        <p class="mt-8 text-base leading-6 text-center text-zinc-400">
+            © 2024 Miguel Raposo. All rights reserved.
+        </p>
+    </div>
+</body>
+</html>
