@@ -25,7 +25,7 @@ const commands = {
   ],
 
   social: [
-    'LinkedIn: https://linkedin.com/in/',
+    'LinkedIn: https://linkedin.com/in/miguelpraposo',
     'GitHub: https://github.com/migpovrap'
   ],
 
@@ -33,6 +33,7 @@ const commands = {
     'Education:',
     '   - B.Sc. in Computer Science and Engineering at Instituto Superior Técnico, Universidade de Lisboa (2023-2026)',
     '   - Science and Tecnology course at Escola Secundária Homen Cristo (2020-2023)',
+    '   - Certificate in Advanced English C1 (196/210).',
     '   ',
     'Volunteering:',
     '   - Registration Team Member at WebSummit Lisbon 2024',
@@ -44,7 +45,8 @@ const commands = {
   ],
 
   welcome: [
-    'Welcome message (Place Holder)',
+    "Hi I'm Miguel a second year computer science and engineering student at IST,",
+    'Tinkering with all things technology and trying to justify a homelab!',
     'Type "help" to see available commands.'
   ]
 };
