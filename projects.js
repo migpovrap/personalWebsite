@@ -30,24 +30,24 @@ async function fetchPinnedProjects() {
           if (!project) return;
           
           projectsContainer.innerHTML += `
-              <div class="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
+              <div class="overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105 bg-white dark:bg-zinc-800">
                   <a href="https://github.com/${project.author}/${project.name}" target="_blank" class="block">
-                      <div class="p-6 bg-white">
+                      <div class="p-6 bg-white dark:bg-zinc-800">
                           <div class="flex items-center justify-between mb-4">
-                              <h3 class="text-xl font-bold text-zinc-900">${project.name}</h3>
-                              <i class="fab fa-github text-xl text-zinc-700"></i>
+                              <h3 class="text-xl font-bold text-zinc-900 dark:text-zinc-100">${project.name}</h3>
+                              <i class="fab fa-github text-xl text-zinc-700 dark:text-zinc-300"></i>
                           </div>
-                          <p class="text-zinc-600 mb-4">
+                          <p class="text-zinc-600 dark:text-zinc-400 mb-4">
                               ${project.description || 'No description available'}
                           </p>
                           <div class="flex flex-wrap gap-2">
-                              <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">
+                              <span class="px-3 py-1 text-sm text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-700 rounded-full">
                                   ${project.language}
                               </span>
-                              <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">
+                              <span class="px-3 py-1 text-sm text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-700 rounded-full">
                                   ⭐ ${project.stars}
                               </span>
-                              <span class="px-3 py-1 text-sm text-zinc-600 bg-zinc-100 rounded-full">
+                              <span class="px-3 py-1 text-sm text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-700 rounded-full">
                                   🍴 ${project.forks}
                               </span>
                           </div>
