@@ -110,16 +110,3 @@ async function fetchProjects() {
   }
 }
 document.addEventListener('DOMContentLoaded', fetchProjects);
-
-//Do action when page loads
-window.addEventListener("load", () => {
-  //Checks if page is loaded in mobile device
-  if (isMobileDevice() && !window.location.href.includes('main.html')) {
-    window.location.href = "main.html";
-  }
-})
-
-function isMobileDevice() {
-  //Uses the string Android/iPhone/iPad in the userAgent to check the device used.
-  return /Android|iPhone|iPad/i.test(navigator.userAgent) || window.matchMedia("(max-width:768px").matches;
-}
