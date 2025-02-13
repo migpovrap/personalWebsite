@@ -55,20 +55,20 @@ document.addEventListener('DOMContentLoaded', () => {
       appendToHistory(cmd, true);
 
       const result = command(cmd);
-      
+
       if (result === 'clear') {
         history.innerHTML = '';
       } else {
         appendToHistory(result);
       }
-      
+
       input.value = '';
       window.scrollTo(0, document.body.scrollHeight);
     }
   });
 
   input.addEventListener('keydown', (e) => {
-    switch(e.key) {
+    switch (e.key) {
       case 'ArrowUp':
         e.preventDefault();
         if (commandHistory.length > 0) {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
           input.value = commandHistory[historyIndex];
         }
         break;
-        
+
       case 'ArrowDown':
         e.preventDefault();
         if (historyIndex > -1) {
@@ -90,11 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
   appendToHistory(commands.welcome);
 });
 
+//Use Github API to get all data about the projects
 async function fetchProjects() {
   try {
     const response = await fetch('https://api.github.com/users/migpovrap/repos');
     const projects = await response.json();
-    
+
     const processedProjects = projects.map(project => ({
       name: project.name,
       description: project.description || 'No description available',
@@ -102,7 +103,7 @@ async function fetchProjects() {
       stars: project.stargazers_count,
       url: project.html_url
     }));
-    
+
     updateFileSystem(processedProjects);
   } catch (error) {
     console.error('Error fetching projects:', error);
@@ -113,8 +114,8 @@ document.addEventListener('DOMContentLoaded', fetchProjects);
 //Do action when page loads
 window.addEventListener("load", () => {
   //Checks if page is loaded in mobile device
-  if(isMobileDevice() && !window.location.href.includes('main.html')) {
-    window.location.href ="main.html";
+  if (isMobileDevice() && !window.location.href.includes('main.html')) {
+    window.location.href = "main.html";
   }
 })
 

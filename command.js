@@ -45,7 +45,7 @@ function cd(dir) {
   }
 
   const current = getCurrentDirectory();
-  if (current[dir]) { 
+  if (current[dir]) {
     if (typeof current[dir] === 'object' && !current[dir].type) {
       fileSystem.currentPath.push(dir);
       return [`Changed to ${fileSystem.currentPath.join('/')}`];
@@ -59,9 +59,9 @@ function ls() {
   const current = getCurrentDirectory();
   const contents = Object.keys(current).map(name => {
     if (current[name].type === 'file') {
-      return `📄 ${name}`;
+      return `<i class="fas fa-file"></i> ${name}`;
     }
-    return `📁 ${name}`;
+    return `<i class="fas fa-folder"></i> ${name}`;
   })
   return contents.length ? contents : ['Empty directory'];
 }
@@ -83,7 +83,7 @@ function cat(file) {
 }
 
 const commands = {
-  help : [
+  help: [
     'Available commands:',
     'help      - Show the help mensage',
     'welcome   - Show the welcome message',
