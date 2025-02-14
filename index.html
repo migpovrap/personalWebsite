@@ -34,10 +34,10 @@
       <!-- Navigation -->
       <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-50/80 dark:bg-zinc-900/80 backdrop-blur-sm">
         <div class="max-w-screen-xl mx-auto px-4">
-          <div class="flex items-center justify-center h-16 space-x-8">
-            <a href="#home"
-              class="relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
-              x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+          <div class="flex flex-wrap items-center justify-center h-16 space-x-8">
+            <a href="#home" id="homenav"
+              class="nav-link relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
+              x-data="{ hover: false }" x-init="hover = false" @mouseenter="hover = true" @mouseleave="hover = false">
               <span class="block">Home</span>
               <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden underline">
                 <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900"
@@ -47,9 +47,9 @@
                 </span>
               </span>
             </a>
-            <a href="#projects"
-              class="relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
-              x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+            <a href="#projects" id="projectsnav"
+              class="nav-link relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
+              x-data="{ hover: false }" x-init="hover = false" @mouseenter="hover = true" @mouseleave="hover = false">
               <span class="block">Projects</span>
               <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden underline">
                 <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900"
@@ -59,9 +59,9 @@
                 </span>
               </span>
             </a>
-            <a href="#education"
-              class="relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
-              x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+            <a href="#education" id="educationnav"
+              class="nav-link relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
+              x-data="{ hover: false }" x-init="hover = false" @mouseenter="hover = true" @mouseleave="hover = false">
               <span class="block">Education</span>
               <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden underline">
                 <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900"
@@ -71,9 +71,9 @@
                 </span>
               </span>
             </a>
-            <a href="#expvol"
-              class="relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
-              x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+            <a href="#expvol" id="expvolnav"
+              class="nav-link relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
+              x-data="{ hover: false }" x-init="hover = false" @mouseenter="hover = true" @mouseleave="hover = false">
               <span class="block">Experience and Volunteering</span>
               <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden underline">
                 <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900"
@@ -83,9 +83,9 @@
                 </span>
               </span>
             </a>
-            <a href="/404"
-              class="relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
-              x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false">
+            <a href="/404" id="404nav"
+              class="nav-link relative font-medium leading-6 text-zinc-600 dark:text-zinc-400 transition duration-150 ease-out hover:text-zinc-900 dark:hover:text-zinc-100 transform hover:scale-105 hover:shadow-lg"
+                x-data="{ hover: false }" x-init="hover = false" @mouseenter="hover = true" @mouseleave="hover = false">
               <span class="block">CV</span>
               <span class="absolute bottom-0 left-0 inline-block w-full h-0.5 -mb-1 overflow-hidden underline">
                 <span x-show="hover" class="absolute inset-0 inline-block w-full h-1 h-full transform bg-zinc-900"
@@ -108,19 +108,19 @@
       <!-- Home Content -->
       <section id="home"
         class="relative px-4 pt-32 mx-auto lg:py-48 md:px-8 xl:px-20 sm:max-w-xl md:max-w-full min-h-screen flex items-start justify-start">
-        <div class="flex flex-col lg:flex-row items-center max-w-screen-xl mx-auto">
+        <div class="flex flex-col lg:flex-row items-center max-w-screen-xl mx-auto space-y-8 lg:space-y-0 lg:space-x-32">
           <!-- Text Content -->
-          <div class="lg:w-1/2 flex flex-col items-start">
-            <div class="max-w-xl mb-6">
+          <div class="lg:w-1/2 flex flex-col items-start space-y-6">
+            <div class="max-w-xl">
               <h1
-                class="max-w-full mb-6 font-sans text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-7xl sm:leading-none">
+                class="max-w-full font-sans text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-7xl">
                 Hi,
               </h1>
               <h1
-                class="max-w-full mb-6 font-sans text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-7xl sm:leading-none">
+                class="max-w-full font-sans text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 sm:text-7xl whitespace-nowrap mb-16">
                 I'm Miguel Raposo
               </h1>
-              <p class="text-lg text-zinc-700 dark:text-zinc-300 md:text-xl">
+              <p class="text-lg text-zinc-700 dark:text-zinc-300 md:text-xl mb-2">
                 A Computer Science and Engineering Student @ Instituto Superior Técnico, Lisbon.
               </p>
               <p class="text-lg text-zinc-700 dark:text-zinc-300 md:text-xl">
@@ -131,7 +131,6 @@
           <!-- Image -->
           <div class="lg:w-1/2 flex justify-center">
             <img id="fox_coding" src="fox_coding.png" class="w-full max-w-xs sm:max-w-md lg:max-w-full">
-            </a>
           </div>
         </div>
       </section>
@@ -331,42 +330,47 @@
         }
         document.addEventListener('DOMContentLoaded', () => {
           function highLightNavItem() {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
+            // Get the actual sections instead of nav items
+            const sections = ['home', 'projects', 'education', 'expvol'].map(id => document.getElementById(id));
+            const navLinks = document.querySelectorAll('[id$="nav"]'); // Select elements with IDs ending in "nav"
 
             window.addEventListener('scroll', () => {
               let current = '';
 
               sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-                if (window.scrollY >= sectionTop - 80 && window.scrollY < sectionTop + sectionHeight - 80) {
-                  current = section.getAttribute('id');
+                if (section) {
+                  const rect = section.getBoundingClientRect();
+                  // Check if section is in viewport
+                  if (rect.top <= 100 && rect.bottom >= 100) {
+                    current = section.id;
+                  }
                 }
               });
 
               navLinks.forEach(link => {
-                link.classList.remove('text-zinc-900', 'dark:text-zinc-100', 'transform', 'scale-105', 'shadow-lg');
-                const underline = link.querySelector('.underline');
-                if (underline) {
-                  underline.classList.remove('scale-100');
-                  underline.remove();
-                }
-
-                if (link.getAttribute('href') === `#${current}`) {
-                  link.classList.add('text-zinc-900', 'dark:text-zinc-100', 'transform', 'scale-105', 'shadow-lg');
-                  const underlineSpan = document.createElement('span');
-                  underlineSpan.classList.add('absolute', 'bottom-0', 'left-0', 'inline-block', 'w-full', 'h-0.5', '-mb-1', 'overflow-hidden', 'underline');
-                  const innerSpan = document.createElement('span');
-                  innerSpan.classList.add('absolute', 'inset-0', 'inline-block', 'w-full', 'h-1', 'h-full', 'transform', 'bg-zinc-900', 'scale-100');
-                  underlineSpan.appendChild(innerSpan);
-                  link.appendChild(underlineSpan);
+                const sectionId = link.getAttribute('href').replace('#', '');
+                if (sectionId === current) {
+                  // Use Alpine's global store to update state
+                  if (link._x_dataStack) {
+                    link._x_dataStack[0].hover = true;
+                  }
+                } else {
+                  if (link._x_dataStack) {
+                    link._x_dataStack[0].hover = false;
+                  }
                 }
               });
             });
           }
-          highLightNavItem();
 
+          // Wait for Alpine.js to be ready
+          if (window.Alpine) {
+            highLightNavItem();
+          } else {
+            document.addEventListener('alpine:init', () => {
+              highLightNavItem();
+            });
+          }
           // Theme toggle script
           const themeToggle = document.getElementById('theme-toggle');
           const moonIcon = themeToggle.querySelector('.fa-moon');
