@@ -45,6 +45,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  input.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const currentInput = input.value;
+      input.value = autocomplete(currentInput);
+      // Move cursor to end of input
+      input.selectionStart = input.selectionEnd = input.value.length;
+    }
+  });
+
   input.addEventListener('keypress', (e) => {
     if (e.key === 'Enter' && input.value.trim()) {
       const cmd = input.value;

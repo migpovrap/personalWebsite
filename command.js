@@ -1,3 +1,48 @@
+function getAutocompleteSuggestions(partial, command) {
+  const current = getCurrentDirectory();
+  const items = Object.keys(current);
+  
+  // Filter based on command type
+  const filtered = items.filter(item => {
+    if (command === 'cd') {
+      // Only directories for cd
+      return !current[item].type && item.toLowerCase().startsWith(partial.toLowerCase());
+    } else if (command === 'cat') {
+      // Only files for cat
+      return current[item].type === 'file' && item.toLowerCase().startsWith(partial.toLowerCase());
+    }
+    return false;
+  });
+  
+  return filtered;
+}
+
+function autocomplete(input) {
+  const [command, partial = ''] = input.toLowerCase().trim().split(' ');
+  
+  if (!['cd', 'cat'].includes(command)) {
+    return input;
+  }
+  
+  const suggestions = getAutocompleteSuggestions(partial, command);
+  
+  if (suggestions.length === 0) {
+    return input;
+  } else if (suggestions.length === 1) {
+    // Complete with the only suggestion
+    return `${command} ${suggestions[0]}`;
+  } else if (suggestions.length > 1) {
+    // Show all suggestions in the terminal history
+    const history = document.querySelector('.terminal-history');
+    const suggestionDiv = document.createElement('div');
+    suggestionDiv.className = 'mb-2 font-mono';
+    suggestionDiv.innerHTML = suggestions.join('  ');
+    history.appendChild(suggestionDiv);
+    return input;
+  }
+  return input;
+}
+
 const fileSystem = {
   root: {
     projects: {
@@ -91,7 +136,7 @@ const commands = {
     'projects  - My projects mostly on github',
     'cv        - Download and view my cv',
     'clear     - Unix clear command',
-    'gui       - A simpler version',
+    'exit      - Returns to the normal website',
     'cd        - Unix cd command',
     'ls        - Unix ls command',
     'cat       - Unix cat command'
@@ -138,6 +183,12 @@ const commands = {
 };
 
 function command(cmd) {
+  const autocompletedCmd = autocomplete(cmd);
+  if (autocompletedCmd !== cmd) {
+    // Update the input field with the autocompleted command
+    document.querySelector('.terminal-input').value = autocompletedCmd;
+    return []; // Return empty array to not show any message
+  }
   const [command, ...args] = cmd.toLowerCase().trim().split(' ');
   switch (command) {
     case 'ls':
@@ -158,8 +209,9 @@ function command(cmd) {
       return commands.social;
     case 'cv':
       return commands.cv;
-    case 'gui':
-      window.location.href = 'main.html';
+    case 'exit':
+      window.location.href = 'index.html';
+      break;
     case 'welcome':
       return commands.welcome;
     default:
