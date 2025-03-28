@@ -9,7 +9,7 @@ A modern, responsive portfolio website showcasing my projects and experience, ma
 - Dark mode aesthetic
 
 ## Technologies Used
-- NodeJS
+- NextJS
 - React
 - TypeScript
 - GitHub API integration via berrysauce/pinned
