@@ -1,1 +1,4 @@
 node_modules
+.next
+.DS_Dtore
+next-env.d.ts
