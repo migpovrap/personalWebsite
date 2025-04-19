@@ -1,0 +1,13 @@
+.container {
+  margin-top: 5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.flexLayout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
