@@ -10,8 +10,9 @@ export default async function Projects() {
       <div className={styles.flexLayout}>
       {repoData.map((repoData) => (
       <ProjectCard 
-        key={repoData.name}
+        key={repoData.git_name}
         name={repoData.name}
+        git_name={repoData.git_name}
         description={repoData.description}
         stargazers_count={repoData.stargazers_count}
         language={repoData.language}

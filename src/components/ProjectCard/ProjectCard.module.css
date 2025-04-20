@@ -3,6 +3,9 @@
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  min-width: 32rem;
+  max-width: 32rem;
+  z-index: 50;
 }
 
 .card:hover {
@@ -34,13 +37,33 @@
   margin: 0;
 }
 
+.gitName {
+  font-size: 0.875rem;
+  font-weight: normal;
+  color: #888;
+  margin: 0.25rem 0 0.75rem 0;
+}
+
 .description {
   color: #666;
   margin-bottom: 1rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.languageIcon {
+  object-fit: contain;
 }

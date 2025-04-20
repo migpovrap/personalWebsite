@@ -1,5 +1,6 @@
 export type GithubJsonRepo = {
   name: string;
+  full_name: string;
   description: string;
   stargazers_count: number;
   language: string;
@@ -9,6 +10,7 @@ export type GithubJsonRepo = {
 
 export type RepoData = {
   name: string;
+  git_name: string;
   description: string;
   stargazers_count: number;
   language: string;
