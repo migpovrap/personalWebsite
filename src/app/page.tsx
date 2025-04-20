@@ -16,7 +16,7 @@ export default function HomePage() {
       src="/fox_coding.png"
       width={500}
       height={500}
-      alt="Picture of the author"
+      alt="Fox Coding"
     />
   </div>
 </div>
