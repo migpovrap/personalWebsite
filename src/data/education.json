@@ -1,0 +1,23 @@
+[
+  {
+    "title": "B.Sc. in Computer Science and Engineering",
+    "subtitle": "Instituto Superior Técnico",
+    "date": "2023 - Present",
+    "description": "Final grade: --/20",
+    "tags": [ "Object Oriented Programming", "Operating Systems", "Algorithms and Data Structures", "Maths and Physics" ]
+  },
+  {
+    "title": "Certificate in Advanced English",
+    "subtitle": "Royal School, Aveiro",
+    "date": "July of 2023",
+    "description": "FCEFR Level: C1 with a overall score of: 196/210",
+    "tags": [ "Cambridge English Assesement" ]
+  },
+  {
+    "title": "High School Diploma, Science and Technology",
+    "subtitle": "Escola Secundária Homem Cristo",
+    "date": "2020 - 2023",
+    "description": "In the national final Math exam I obtained a grade of 18/20. With a final grade of  176/200.",
+    "tags": [ "Mathematics", "Physics", "Portuguese", "English" ]
+  }
+]

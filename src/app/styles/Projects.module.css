@@ -1,5 +1,5 @@
 .container {
-  margin-top: 5rem;
+  margin-top: 8rem;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -8,6 +8,8 @@
 .flexLayout {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
   justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  box-sizing: border-box;
 }

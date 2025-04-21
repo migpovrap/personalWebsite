@@ -1,22 +1,23 @@
  :root {
   --background: #F2F2F7;
   --foreground: #0f0f0f;
-  --muted-foreground: #737373;
+  --primary: #000000;
+  --secondary: #414143;
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --primary: #0f0f0f;
-  --primary-foreground: #F2F2F7;
+  --primary-background: #fbfbfd;
   --font-sans: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --highlight: #0366d6;
 }
 
 .dark {
-  --background: #292828;
+  --background: #000000;
   --foreground: #F2F2F7;
-  --muted-foreground: #a3a3a3;
+  --primary: #F2F2F7;
+  --secondary: #f1f1f5;
   --border: #27272a;
   --input: #27272a;
-  --primary: #F2F2F7;
-  --primary-foreground: #0f0f0f;
+  --primary-background: #1b1b1b;
 }
 
 * {

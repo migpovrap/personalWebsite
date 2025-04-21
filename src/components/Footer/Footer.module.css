@@ -19,7 +19,7 @@
 }
 
 .footerItem:hover {
-  color: #0070f3;
+  color: var(--highlight);
 }
 
 .footerText {

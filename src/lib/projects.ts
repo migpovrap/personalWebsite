@@ -12,7 +12,18 @@ function jsonToRepoData(repo: GithubJsonRepo): RepoData {
   };
 }
 
+const cache = new Map<string, { data: RepoData[]; timestamp: number }>();
+const CACHE_EXPIRATION = 60 * 60 * 1000; // 1 hour in milliseconds
+
 export async function getGithubProjects(username: string): Promise<RepoData[]> {
+
+  const cacheKey = `projects:${username}`;
+  const cachedData = cache.get(cacheKey);
+
+  // Check if cache is valid
+  if (cachedData && Date.now() - cachedData.timestamp < CACHE_EXPIRATION) {
+    return cachedData.data; // Serve cached data
+  }
 
   const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
 
@@ -23,8 +34,13 @@ export async function getGithubProjects(username: string): Promise<RepoData[]> {
   const rawJson: GithubJsonRepo[] = await response.json();
 
   const repoData = rawJson.map(jsonToRepoData);
-  
-  return repoData.concat(await getCollaboratorProjects());
+
+  const collaboratorProjects = await getCollaboratorProjects();
+  const allProjects = repoData.concat(collaboratorProjects);
+
+  cache.set(cacheKey, { data: allProjects, timestamp: Date.now() });
+
+  return allProjects;
 }
 
 async function getCollaboratorProjects(): Promise<RepoData[]> {
