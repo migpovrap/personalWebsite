@@ -4,7 +4,7 @@ import styles from "./Footer.module.css"
 
 function FooterItem({ link, label, Icon }: { link: string; label: string; Icon: React.ElementType }) {
   return (
-    <a href={link} className={styles.footerItem} aria-label={label} >
+    <a href={link} className={styles.footerItem}  target="_blank" rel="noopener noreferrer" aria-label={label} >
       <Icon />
     </a>
   );
