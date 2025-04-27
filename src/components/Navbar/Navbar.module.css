@@ -13,14 +13,19 @@
   align-items: center;
   padding: 0.5rem 1rem;
   row-gap: 0.5rem;
-  transition: box-shadow 0.4s ease, transform 0.4s ease; /* Smooth transition for shadow and scale */
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .header.menuOpen {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Enhanced shadow when menu is open */
-  transform: scale(1.001); /* Slight scaling effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transform: scale(1.001);
 }
 
+.header.menuClosing {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transform: scale(1);
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
 
 .nav {
   display: flex;
@@ -73,6 +78,34 @@
 
 .mobileMenu .navLink {
   font-size: 1.5rem;
+}
+
+.mobileMenu.menuClosing {
+  animation: smoothSlideUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Slide-down animation for opening */
+@keyframes smoothSlideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Slide-up animation for closing */
+@keyframes smoothSlideUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
 }
 
 .navLink {
