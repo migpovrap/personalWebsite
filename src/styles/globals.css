@@ -11,13 +11,14 @@
 }
 
 .dark {
-  --background: #000000;
+  --background: #1F2020;
   --foreground: #F2F2F7;
   --primary: #F2F2F7;
   --secondary: #f1f1f5;
-  --border: #27272a;
-  --input: #27272a;
-  --primary-background: #1b1b1b;
+  --border: #5c5757;
+  --input: #5c5757;
+  --primary-background: #2d2c2c;
+  --highlight: #278cff;
 }
 
 * {
