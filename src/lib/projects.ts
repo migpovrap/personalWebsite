@@ -14,6 +14,7 @@ function jsonToRepoData(repo: GithubJsonRepo): RepoData {
 
 const cache = new Map<string, { data: RepoData[]; timestamp: number }>();
 const CACHE_EXPIRATION = 60 * 60 * 1000; // 1 hour in milliseconds
+const blackList = [ "migpovrap/github-readme-stats", "migpovrap/neiist-website" ];
 
 export async function getGithubProjects(username: string): Promise<RepoData[]> {
 
@@ -36,8 +37,12 @@ export async function getGithubProjects(username: string): Promise<RepoData[]> {
   const repoData = rawJson.map(jsonToRepoData);
 
   const collaboratorProjects = await getCollaboratorProjects();
-  const allProjects = repoData.concat(collaboratorProjects);
+  let allProjects = repoData.concat(collaboratorProjects);
 
+  allProjects = allProjects.filter( function (project) {
+    return !blackList.includes(project.git_name);
+  });
+  
   cache.set(cacheKey, { data: allProjects, timestamp: Date.now() });
 
   return allProjects;
