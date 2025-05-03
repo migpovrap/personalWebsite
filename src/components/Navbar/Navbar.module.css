@@ -165,50 +165,32 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.iconContainer {
-  position: relative;
+.icon {
   width: 1.5rem;
   height: 1.5rem;
+  animation: rotateSun 0.4s ease;
 }
 
-.sunIcon,
-.moonIcon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.4s ease-out;
+.dark .icon {
+  animation: rotateMoon 0.4s ease;
 }
 
-.sunIcon {
-  transform: rotate(0deg);
-  opacity: 1;
+@keyframes rotateSun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-90deg);
+  }
 }
 
-.moonIcon {
-  transform: rotate(-90deg);
-  opacity: 0;
-}
-
-.themeToggle.light .sunIcon {
-  transform: rotate(0deg);
-  opacity: 1;
-}
-
-.themeToggle.light .moonIcon {
-  transform: rotate(-90deg);
-  opacity: 0;
-}
-
-.themeToggle.dark .sunIcon {
-  transform: rotate(90deg);
-  opacity: 0;
-}
-
-.themeToggle.dark .moonIcon {
-  transform: rotate(0deg);
-  opacity: 1;
+@keyframes rotateMoon {
+  0% {
+    transform: rotate(-90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @supports (font-variation-settings: normal) {

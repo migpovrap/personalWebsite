@@ -21,14 +21,15 @@ export function ThemeToggle() {
 
   return (
     <button
-      className={`${styles.themeToggle} ${theme === "dark" ? styles.dark : styles.light}`}
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      aria-label="Toggle theme"
+      className={`${styles.themeToggle} ${theme === "dark" ? styles.dark : ""}`}
+      aria-label={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >
-      <span className={styles.iconContainer}>
-        <FiSun className={styles.sunIcon} />
-        <FiMoon className={styles.moonIcon} />
-      </span>
+      {theme === "dark" ? (
+        <FiMoon className={`${styles.icon} ${styles.dark}`} />
+      ) : (
+        <FiSun className={styles.icon} />
+      )}
     </button>
   )
 }
