@@ -85,7 +85,7 @@
   margin-top: auto;
 }
 
-.languageIconContainer {
+.iconContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,6 +95,15 @@
   background-color: var(--input);
   z-index: 2rem;
   box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.icon:hover {
+  color: var(--highlight);
 }
 
 .languageIcon {

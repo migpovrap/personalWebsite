@@ -5,6 +5,7 @@ export type GithubJsonRepo = {
   stargazers_count: number;
   language: string;
   html_url: string;
+  homepage: string;
   topics: string[];
 };
 
@@ -15,5 +16,6 @@ export type RepoData = {
   stargazers_count: number;
   language: string;
   url: string;
+  homepage_url: string;
   tags: string[];
 };

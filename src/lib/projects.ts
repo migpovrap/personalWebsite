@@ -8,6 +8,7 @@ function jsonToRepoData(repo: GithubJsonRepo): RepoData {
     stargazers_count: repo.stargazers_count,
     language: repo.language,
     url: repo.html_url,
+    homepage_url: repo.homepage,
     tags: repo.topics,
   };
 }
@@ -28,6 +29,7 @@ export async function getGithubProjects(username: string): Promise<RepoData[]> {
 
   const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
 
+
   if (!response.ok) {
     throw new Error(`GitHub API error: ${response.status} ${response.statusText}`);
   }
@@ -44,7 +46,7 @@ export async function getGithubProjects(username: string): Promise<RepoData[]> {
   });
   
   cache.set(cacheKey, { data: allProjects, timestamp: Date.now() });
-
+  
   return allProjects;
 }
 
