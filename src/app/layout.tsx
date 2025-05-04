@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import { Metadata } from 'next'
-import { ThemeProvider } from '@/provider/ThemeProvider';
+import { ThemeProvider } from '@/context/ThemeContext';
 import '@/styles/globals.css';
 
 export const metadata: Metadata = {
