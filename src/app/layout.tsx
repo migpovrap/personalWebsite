@@ -3,7 +3,7 @@ import Footer from '@/components/Footer/Footer';
 import Navbar from '@/components/Navbar/Navbar';
 import { Metadata } from 'next'
 import { ThemeProvider } from '@/provider/ThemeProvider';
-import "../styles/globals.css";
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
   title: 'Miguel Raposo',

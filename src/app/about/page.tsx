@@ -1,4 +1,4 @@
-import styles from '@/app/styles/About.module.css'
+import styles from '@/styles/pages/About.module.css'
 import Card from '@/components/AboutCard/AboutCard';
 import { educationData, experienceData } from '@/lib/aboutData';
 

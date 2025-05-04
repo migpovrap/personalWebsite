@@ -22,14 +22,12 @@
 }
 
 .header.menuClosing {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   transform: scale(1);
-  transition: box-shadow 0.4s ease, transform 0.4s ease;
 }
 
 .nav {
   display: flex;
-  justify-content:  space-between;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
 }
@@ -59,21 +57,9 @@
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
   width: 100%;
   animation: smoothSlideDown 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-@keyframes smoothSlideDown {
-  from {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }
 
 .mobileMenu .navLink {
@@ -84,7 +70,6 @@
   animation: smoothSlideUp 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-/* Slide-down animation for opening */
 @keyframes smoothSlideDown {
   from {
     transform: translateY(-20px);
@@ -96,7 +81,6 @@
   }
 }
 
-/* Slide-up animation for closing */
 @keyframes smoothSlideUp {
   from {
     transform: translateY(0);
@@ -141,67 +125,12 @@
   width: 80%;
 }
 
-.themeToggle {
-  position: relative;
-  width: 2.5rem;
-  height: 2.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--foreground);
-  overflow: hidden;
-  border-radius: 50%;
-  transition: background-color 0.3s ease;
-}
-
-.themeToggle:hover {
-  background-color: rgba(0, 0, 0, 0.05);
-}
-
-.dark .themeToggle:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  animation: rotateSun 0.4s ease;
-}
-
-.dark .icon {
-  animation: rotateMoon 0.4s ease;
-}
-
-@keyframes rotateSun {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(-90deg);
-  }
-}
-
-@keyframes rotateMoon {
-  0% {
-    transform: rotate(-90deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
 @supports (font-variation-settings: normal) {
   .navLink {
     font-variation-settings: "wght" 400;
   }
 
-  .navLink.active {
-    font-variation-settings: "wght" 700;
-  }
-
+  .navLink.active,
   .navLink:hover {
     font-variation-settings: "wght" 700;
   }

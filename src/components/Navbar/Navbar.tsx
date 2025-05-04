@@ -1,8 +1,8 @@
 "use client"
 
 import NavItem from './NavItem';
-import styles from "./Navbar.module.css";
-import { GiFox } from "react-icons/gi";
+import styles from '@/styles/components/Navbar.module.css';
+import { GiFox } from 'react-icons/gi';
 import { ThemeToggle } from './ThemeToggle';
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';

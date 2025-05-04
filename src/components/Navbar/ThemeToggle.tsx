@@ -1,10 +1,10 @@
 "use client"
 
-import { useTheme } from "next-themes"
-import { useEffect, useState } from "react"
-import { FiSun, FiMoon } from "react-icons/fi";
+import { useTheme } from 'next-themes';
+import { useEffect, useState } from 'react';
+import { FiSun, FiMoon } from 'react-icons/fi';
 
-import styles from "@/components/Navbar/Navbar.module.css"
+import styles from "@/styles/components/ThemeToggle.module.css"
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme()

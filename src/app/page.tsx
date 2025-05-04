@@ -1,4 +1,4 @@
-import styles from './styles/HomePage.module.css';
+import styles from '@/styles/pages/HomePage.module.css';
 import Image from 'next/image';
 
 export default function HomePage() {

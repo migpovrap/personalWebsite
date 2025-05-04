@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./ProjectCard.module.css";
+import styles from "@/styles/components/ProjectCard.module.css";
 import { RepoData } from "@/types/RepoData";
 import { AiFillStar } from "react-icons/ai";
 import { BsGlobe } from "react-icons/bs";
 import { languageIconMap } from "@/lib/DevIconMap";
-import Tag from "./Tag";
+import Tag from "@/components/ProjectCard/Tag";
 
 export default function ProjectCard({ name, git_name, description, stargazers_count, language, url, homepage_url, tags }: RepoData) {
   const iconSrc = languageIconMap[language] || languageIconMap["Unknown"];

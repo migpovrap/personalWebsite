@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from './Navbar.module.css';
+import styles from '@/styles/components/Navbar.module.css';
 
 type NavItemProps = {
   href: string;

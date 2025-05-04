@@ -1,5 +1,5 @@
 import { getGithubProjects } from "@/lib/projects"
-import styles from "@/app/styles/Projects.module.css";
+import styles from "@/styles/pages/Projects.module.css";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";
 
 export default async function Projects() {

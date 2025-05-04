@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './AboutCard.module.css';
+import styles from '@/styles/components/AboutCard.module.css';
 import { AboutCardData } from '@/types/AboutData';
 
 export default function Card({ title, subtitle, date, description, tags }: AboutCardData ) {
