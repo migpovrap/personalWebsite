@@ -16,13 +16,13 @@ export function ThemeToggle() {
   }, [])
 
   if (!mounted) {
-    return <button className={styles.themeToggle}></button>
+    return null
   }
 
   return (
     <button
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
-      className={`${styles.themeToggle} ${resolvedTheme === "dark" ? styles.dark : ""}`}
+      className={styles.themeToggle}
       aria-label={resolvedTheme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
     >
       {resolvedTheme === "dark" ? (
