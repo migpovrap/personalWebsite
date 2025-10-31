@@ -3,7 +3,7 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-10-31"
 compatibility_flags = ["nodejs_compat"]
 
-account_id = "${CLOUDFLARE_ACCOUNT_ID}"
+account_id = "ACCOUNT_ID_PLACEHOLDER"
 
 [assets]
 directory = ".open-next/assets"
@@ -11,5 +11,5 @@ binding = "ASSETS"
 
 [[secrets_store_secrets]]
 binding = "GITHUB_TOKEN_CF_WORKER"
-store_id = "${CLOUDFLARE_STORE_ID}"
+store_id = "STORE_ID_PLACEHOLDER"
 secret_name = "GITHUB_TOKEN"
