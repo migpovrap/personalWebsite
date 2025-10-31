@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getGithubProjects } from "@/lib/projects"
 import styles from "@/styles/pages/Projects.module.css";
 import ProjectCard from "@/components/ProjectCard/ProjectCard";

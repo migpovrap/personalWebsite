@@ -1,0 +1,15 @@
+name = "portfolio"
+main = ".open-next/worker.js"
+compatibility_date = "2025-10-31"
+compatibility_flags = ["nodejs_compat"]
+
+account_id = "${CLOUDFLARE_ACCOUNT_ID}"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[[secrets_store_secrets]]
+binding = "GITHUB_TOKEN_CF_WORKER"
+store_id = "${CLOUDFLARE_STORE_ID}"
+secret_name = "GITHUB_TOKEN"

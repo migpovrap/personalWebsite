@@ -1,0 +1,27 @@
+name: Deploy to Cloudflare Worker
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build Cloudflare Types
+        run: yarn cf-typegen
+
+      - name: Build and Deploy to Cloudflare
+        env:
+          CLOUDFLARE_API_KEY: ${{ secrets.CF_API_KEY }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
+          CLOUDFLARE_STORE_ID: ${{ secrets.CF_STORE_ID }}
+        run: yarn deploy
