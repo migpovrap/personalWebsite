@@ -24,7 +24,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Cloudflare Types
-        run: pnpm run cf-typegen
+        run: pnpm cf-typegen
 
       - name: Replace Cloudflare IDs dynamically
         env:
@@ -38,4 +38,4 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: pnpm run deploy
+        run: pnpm cf:deploy
