@@ -23,9 +23,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Build Cloudflare Types
-        run: pnpm cf-typegen
-
       - name: Replace Cloudflare IDs dynamically
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
@@ -34,8 +31,11 @@ jobs:
           sed -i "s|ACCOUNT_ID_PLACEHOLDER|$CLOUDFLARE_ACCOUNT_ID|" wrangler.toml
           sed -i "s|STORE_ID_PLACEHOLDER|$CLOUDFLARE_STORE_ID|" wrangler.toml
 
+      - name: Build Cloudflare Types
+        run: pnpm cf-typegen
+
       - name: Build and Deploy to Cloudflare
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm cf:deploy
