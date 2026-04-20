@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import styles from "@/styles/components/ProjectCard.module.css";
 import { RepoData } from "@/types/RepoData";
@@ -12,7 +11,14 @@ export default function ProjectCard({ name, git_name, description, stargazers_co
   
   return (
     <div className={styles.card}>
-      <a className={styles.link} href={url} target="_blank" rel="noopener noreferrer">
+      <a
+        className={styles.stretchedLink}
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Open repository ${git_name}`}
+      />
+      <div className={styles.link}>
         <div className={styles.content}>
           <div className={styles.header}>
             <div>
@@ -32,9 +38,14 @@ export default function ProjectCard({ name, git_name, description, stargazers_co
             </div>
             {homepage_url && (
               <div className={styles.iconContainer}>
-              <a href={homepage_url} target="_blank" rel="noopener noreferrer" >
-                <BsGlobe className={styles.icon} />
-              </a>
+                <a
+                  className={styles.iconLink}
+                  href={homepage_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <BsGlobe className={styles.icon} />
+                </a>
               </div>
             )}
             <div className={styles.tags}>
@@ -44,7 +55,7 @@ export default function ProjectCard({ name, git_name, description, stargazers_co
             </div>
           </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 }

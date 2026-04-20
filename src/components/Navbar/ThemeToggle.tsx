@@ -1,21 +1,20 @@
 "use client"
 
+import { useSyncExternalStore } from 'react';
 import { useTheme } from 'next-themes';
-import { useEffect, useState } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
 import styles from "@/styles/components/ThemeToggle.module.css"
 
 export function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme()
-  const [mounted, setMounted] = useState(false)
+  const isClient = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
 
-  // Avoid hydration mismatch
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
+  if (!isClient || !resolvedTheme) {
     return null
   }
 

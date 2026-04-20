@@ -4,7 +4,7 @@ import NavItem from './NavItem';
 import styles from '@/styles/components/Navbar.module.css';
 import { GiFox } from 'react-icons/gi';
 import { ThemeToggle } from './ThemeToggle';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { Divide as Hamburger } from 'hamburger-react'
 
@@ -14,6 +14,14 @@ function Navbar() {
   const [isClosing, setIsClosing] = useState(false);
   const pathName = usePathname();
   const mobileMenuRef = useRef<HTMLDivElement>(null);
+
+  const closeMenu = useCallback(() => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setMenuOpen(false);
+      setIsClosing(false);
+    }, 500);
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,15 +50,7 @@ function Navbar() {
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [menuOpen]);
-
-  const closeMenu = () => {
-    setIsClosing(true); 
-    setTimeout(() => {
-      setMenuOpen(false);
-      setIsClosing(false);
-    }, 500);
-  };
+  }, [menuOpen, closeMenu]);
 
   const toggleMenu = () => {
     setMenuOpen((prev) => !prev);
