@@ -1,5 +1,33 @@
 [
   {
+    "title": "Dev-Team Coordinator",
+    "subtitle": "Núcleo Estudantil de Informática do Instituto Superior Técnico",
+    "date": "September 2025 - Present",
+    "description": "Led development and launch of NEIIST’s new website, including an online shop with SumUp payment support,\nprocessing €3,000+ in transactions. Implemented Notion calendar sync: public activity page for events, and private Google Calendar integration for team\nmembers using Notion webhooks and service accounts for real-time updates.",
+    "tags": ["NEIIST", "Team Work", "Technology"]
+  },
+  {
+    "title": "Dev-Team Collaborator",
+    "subtitle": "Núcleo Estudantil de Informática do Instituto Superior Técnico",
+    "date": "April to September 2025",
+    "description": "Organized, created, and conducted a workshop on Git for fellow students. Helping in replacing the deprecated NEIIST website by developing a complete rewrite and redesign in Next.js",
+    "tags": ["NEIIST", "Team Work", "Technology"]
+  },
+  {
+    "title": "Software Engineer - Ops",
+    "subtitle": "FSTLisboa",
+    "date": "August to December 2025",
+    "description": "Developed a Next.js-based quiz platform, deployed with Docker and Caddy on a VPS, enabling the team to practice\nfor Formula Student qualifier quizzes. Set up STAR-CCM+ on a Linux HPC, implementing an IPv6 proxy solution for secure license server access, and\ncreated a proxy and GUI tool to streamline simulation submissions for the aerodynamics team.",
+    "tags": ["Formula Student", "Team Work", "Technology"]
+  },
+  {
+    "title": "Operations Software Trainee",
+    "subtitle": "FSTLisboa",
+    "date": "May to August 2025",
+    "description": "Developing internal management software to enhance usability and overall experience for the team, focusing on the\nBill of Materials (BOM) system used in Formula Student. Contributing to the development and maintenance of authentication and supporting software required for the web\napplication (FST - Management System). Assisting with events and other operational matters as needed as an Operations Trainee.",
+    "tags": ["Formula Student", "Team Work", "Technology"]
+  },
+  {
     "title": "Registration Team Member",
     "subtitle": "WebSummit Lisbon 2024",
     "date": "November 2024",

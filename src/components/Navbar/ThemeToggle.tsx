@@ -14,9 +14,9 @@ export function ThemeToggle() {
     () => false,
   );
 
-  if (!isClient || !resolvedTheme) {
+  if (!isClient || !resolvedTheme)
     return null
-  }
+
 
   return (
     <button

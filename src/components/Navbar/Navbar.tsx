@@ -37,15 +37,15 @@ function Navbar() {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node)) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target as Node))
         closeMenu();
-      }
+
     };
-    if (menuOpen) {
+    if (menuOpen)
       document.addEventListener('mousedown', handleClickOutside);
-    } else {
+     else
       document.removeEventListener('mousedown', handleClickOutside);
-    };
+    ;
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
@@ -59,12 +59,12 @@ function Navbar() {
   const handleNavLinkClick = () => {
     setMenuOpen(false);
   };
-  
+
   return (
     <header className={`${styles.header} ${menuOpen ? styles.menuOpen : ''}`}>
       <nav className={styles.nav}>
         <GiFox className={styles.navIcon} />
-        
+
         {!isMobile ? (
             <div className={styles.navLinks}>
             <NavItem href="/" label="Home" active={pathName === "/"} />

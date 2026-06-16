@@ -8,7 +8,7 @@ import Tag from "@/components/ProjectCard/Tag";
 
 export default function ProjectCard({ name, git_name, description, stargazers_count, language, url, homepage_url, tags }: RepoData) {
   const iconSrc = languageIconMap[language] || languageIconMap["Unknown"];
-  
+
   return (
     <div className={styles.card}>
       <a
