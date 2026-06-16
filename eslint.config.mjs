@@ -23,6 +23,9 @@ export default [
       "validate-filename": validateFilename,
     },
     rules: {
+      "curly": ["error", "multi"],
+      "nonblock-statement-body-position": ["error", "below"],
+      "no-trailing-spaces": "error",
       "validate-filename/naming-rules": [
         "error",
         {
@@ -45,6 +48,8 @@ export default [
   {
     ignores: [
       ".next/*",
+      ".open-next/*",
+      ".wrangler/*",
       "out/*",
       "worker-bundle/*",
       "public/*",
