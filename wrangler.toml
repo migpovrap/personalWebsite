@@ -3,13 +3,11 @@ main = ".open-next/worker.js"
 compatibility_date = "2025-10-31"
 compatibility_flags = ["nodejs_compat"]
 
-account_id = "ACCOUNT_ID_PLACEHOLDER"
-
 [assets]
 directory = ".open-next/assets"
 binding = "ASSETS"
 
 [[secrets_store_secrets]]
 binding = "GITHUB_TOKEN_CF_WORKER"
-store_id = "STORE_ID_PLACEHOLDER"
+store_id = "f90683583e754e6e83842e38e2e11faa"
 secret_name = "GITHUB_TOKEN"
