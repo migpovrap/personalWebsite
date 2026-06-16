@@ -24,7 +24,7 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build Cloudflare Types
-        run: pnpm cf-typegen
+        run: pnpm cf:typegen
 
       - name: Build and Deploy to Cloudflare
         env:
