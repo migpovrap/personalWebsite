@@ -41,11 +41,11 @@ function Navbar() {
         closeMenu();
 
     };
+
     if (menuOpen)
       document.addEventListener('mousedown', handleClickOutside);
      else
       document.removeEventListener('mousedown', handleClickOutside);
-    ;
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
